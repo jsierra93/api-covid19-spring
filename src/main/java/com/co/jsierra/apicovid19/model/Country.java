@@ -5,14 +5,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.lang.annotation.Documented;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Country {
 
+    private @Id
+    @GeneratedValue
+    Long id;
     private String country;
     private String description;
     private String codCountry;
